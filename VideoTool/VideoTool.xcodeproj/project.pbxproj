@@ -13,7 +13,6 @@
 		045595CC2383DC0300F15436 /* RWNGCDTime.m in Sources */ = {isa = PBXBuildFile; fileRef = 045595CB2383DC0300F15436 /* RWNGCDTime.m */; };
 		045EABCD237EA05700426B30 /* FSKGPUImageBeautyFilter.m in Sources */ = {isa = PBXBuildFile; fileRef = 045EABCC237EA05600426B30 /* FSKGPUImageBeautyFilter.m */; };
 		045EABD0237EA1E900426B30 /* VideoController.m in Sources */ = {isa = PBXBuildFile; fileRef = 045EABCF237EA1E900426B30 /* VideoController.m */; };
-		0461763E23877C5300513AAD /* DSGPUImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0461763D23877C5300513AAD /* DSGPUImageView.m */; };
 		0479E2ED2384F7EF003778E5 /* ThirdViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0479E2EC2384F7EF003778E5 /* ThirdViewController.m */; };
 		0479E2F123851D72003778E5 /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 0479E2F023851D72003778E5 /* libz.tbd */; };
 		0479E2F323851D7B003778E5 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0479E2F223851D7B003778E5 /* AVFoundation.framework */; };
@@ -61,8 +60,6 @@
 		045EABCC237EA05600426B30 /* FSKGPUImageBeautyFilter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FSKGPUImageBeautyFilter.m; sourceTree = "<group>"; };
 		045EABCE237EA1E900426B30 /* VideoController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VideoController.h; sourceTree = "<group>"; };
 		045EABCF237EA1E900426B30 /* VideoController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = VideoController.m; sourceTree = "<group>"; };
-		0461763C23877C5300513AAD /* DSGPUImageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DSGPUImageView.h; sourceTree = "<group>"; };
-		0461763D23877C5300513AAD /* DSGPUImageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DSGPUImageView.m; sourceTree = "<group>"; };
 		0479E2EB2384F7EF003778E5 /* ThirdViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ThirdViewController.h; sourceTree = "<group>"; };
 		0479E2EC2384F7EF003778E5 /* ThirdViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ThirdViewController.m; sourceTree = "<group>"; };
 		0479E2F023851D72003778E5 /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
@@ -241,8 +238,6 @@
 				04D3B8672382543E00AFF97D /* TencentBeautyFilter.m */,
 				045EABCB237EA05600426B30 /* FSKGPUImageBeautyFilter.h */,
 				045EABCC237EA05600426B30 /* FSKGPUImageBeautyFilter.m */,
-				0461763C23877C5300513AAD /* DSGPUImageView.h */,
-				0461763D23877C5300513AAD /* DSGPUImageView.m */,
 				045595CA2383DC0200F15436 /* RWNGCDTime.h */,
 				045595CB2383DC0300F15436 /* RWNGCDTime.m */,
 				0491B518237BA5DB0046C7BD /* Main.storyboard */,
@@ -418,7 +413,6 @@
 				0491B517237BA5DB0046C7BD /* ViewController.m in Sources */,
 				04D3B8692382543E00AFF97D /* TencentBeautyFilter.m in Sources */,
 				0479E32823852B9D003778E5 /* CanvasView.m in Sources */,
-				0461763E23877C5300513AAD /* DSGPUImageView.m in Sources */,
 				04D3B86C23828D3600AFF97D /* RWNImageMovieWriter.m in Sources */,
 				0491B522237BA5DD0046C7BD /* main.m in Sources */,
 				0479E33123852B9D003778E5 /* IFlyFaceResultKeys.m in Sources */,

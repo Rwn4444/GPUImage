@@ -22,6 +22,8 @@
 
 @interface ThirdViewController ()<GPUImageVideoCameraDelegate>
 
+@property (nonatomic, assign) BOOL  isShowWater;
+
 @property (nonatomic, strong) GPUImageStillCamera*  videoCamera;
 
 @property (nonatomic, strong) GPUImageFilter * filter ;
@@ -55,7 +57,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
+    self.isShowWater = YES;
     [self initGPUImageView];
     // Do any additional setup after loading the view.
 }
@@ -83,7 +85,12 @@
 
 -(void)initVideoGPUImageCamerWithWaterImage{
     
-    self.videoCamera = [[GPUImageStillCamera alloc] initWithSessionPreset:AVCaptureSessionPreset640x480 cameraPosition:AVCaptureDevicePositionBack];
+    ///水印和人脸识别不能共存 ，有了事实水印人脸就识别不出来了
+    if (self.isShowWater) {
+        self.videoCamera = [[GPUImageStillCamera alloc] initWithSessionPreset:AVCaptureSessionPresetHigh cameraPosition:AVCaptureDevicePositionFront];
+    }else{
+        self.videoCamera = [[GPUImageStillCamera alloc] initWithSessionPreset:AVCaptureSessionPreset640x480 cameraPosition:AVCaptureDevicePositionFront];
+    }
     self.videoCamera.delegate = self;
     //输出方向为竖屏
     self.videoCamera.outputImageOrientation = UIInterfaceOrientationPortrait;
@@ -124,9 +131,12 @@
     
     UIImageView *waterImageView =[[UIImageView alloc] initWithFrame:CGRectMake(21, 64+25, 93, 36)];
     waterImageView.image = [UIImage imageNamed:@"water"];
+    waterImageView.contentMode =  UIViewContentModeScaleAspectFit;
     // 将水印放在一个跟视频大小相等的View上
     UIView *subView = [[UIView alloc] initWithFrame: CGRectMake(0, 0, UIScreen.mainScreen.bounds.size.width, UIScreen.mainScreen.bounds.size.height ) ];
-//    [subView addSubview:waterImageView];
+    if (self.isShowWater) {
+        [subView addSubview:waterImageView];
+    }
     
     self.uiElement = [[GPUImageUIElement alloc] initWithView:subView];
     _blendFilter = [[GPUImageAlphaBlendFilter alloc] init];
@@ -137,7 +147,6 @@
     [self.filter setFrameProcessingCompletionBlock:^(GPUImageOutput *outPut, CMTime time) {
         [weakSelf.uiElement update];
     }];
-    
     
     //显示view
     GPUImageView *filterView = [[GPUImageView alloc] initWithFrame:CGRectMake(0, 0, UIScreen.mainScreen.bounds.size.width, UIScreen.mainScreen.bounds.size.height )  ];
